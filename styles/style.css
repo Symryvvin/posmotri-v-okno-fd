@@ -16,6 +16,8 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
 }
 
 h1,
@@ -60,16 +62,10 @@ ol {
   white-space: nowrap;
 }
 
-.page {
-  display: flex;
-  align-items: center;
-}
-
 .content {
   display: grid;
   margin: auto; 
   grid-template-columns: 711px 1fr;
-  /* grid-template-rows: 1fr; */
   grid-template-areas: "result details";
   width: 1140px;
   gap: 30px;
@@ -81,6 +77,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
@@ -177,7 +174,7 @@ ol {
   background-color: white;
 }
 
-.search-form__label:has(.search-form__pseudo-checkbox):hover{
+.search-form__label:has(.search-form__pseudo-checkbox):hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -202,6 +199,10 @@ ol {
 }
 
 .button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
   outline: 1px solid white;
 }
 
@@ -237,6 +238,7 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   height: 298px;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -249,7 +251,12 @@ ol {
   margin-bottom: 30px;
 }
 
+.content__list-item {
+  padding: 3px;
+}
+
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: white;
 }
@@ -285,7 +292,6 @@ ol {
   -webkit-box-orient: vertical;  
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 16.2px;
 }
 
 .content__video-card-thumbnail {
@@ -293,4 +299,20 @@ ol {
   height: 103px;
   object-fit: fill;
   object-position: center;
+}
+
+.content__card-link_current:active {
+  background-color: #545050;
+}
+
+.content__card-link_current:hover {
+  text-decoration: underline;
+}
+
+.content__card-link_current:focus {
+  outline: none;
+}
+
+.content__card-link_current:focus-visible {
+  outline: 1px solid white;
 }
